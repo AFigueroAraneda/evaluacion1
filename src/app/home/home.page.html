@@ -1,20 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculadora de Perímetros (Evaluación 1)
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- Selector de figura -->
+  <ion-card>
+    <ion-card-content>
+      <ion-text>Elige una figura:</ion-text>
+      <ion-select placeholder="Selecciona" [(ngModel)]="figura">
+        <ion-select-option value="circulo">Círculo</ion-select-option>
+        <ion-select-option value="triangulo">Triángulo</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Componente CÍRCULO -->
+  <app-circulo *ngIf="figura==='circulo'">
+    <!-- Dentro de app-circulo usa IonInput, IonButton e IonText igual al PDF -->
+  </app-circulo>
+
+  <!-- Componente TRIÁNGULO -->
+  <app-triangulo *ngIf="figura==='triangulo'">
+    <!-- Dentro de app-triangulo usa IonInput, IonButton e IonText igual al PDF -->
+  </app-triangulo>
 </ion-content>
