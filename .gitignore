@@ -30,6 +30,7 @@ log.txt
 /bazel-out
 
 # Node
+# Se verifica que no se suba la carpeta node_modules a github ni al control de versiones como pide la pauta.
 /node_modules
 npm-debug.log
 yarn-error.log

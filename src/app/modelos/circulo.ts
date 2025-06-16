@@ -1,5 +1,5 @@
 //Importado de la clase FiguraGeometrica
-import { FiguraGeometrica } from './figura-geometrica';
+import { FiguraGeometrica } from './FiguraGeometrica';
 
 //Exportado de la clase Circulo que extiende de FiguraGeometrica
 export class Circulo extends FiguraGeometrica {

@@ -1,3 +1,40 @@
-<p>
-  triangulo works!
-</p>
+<!-- Tarjeta con teoría + imagen -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Triángulo</ion-card-title>
+    <ion-card-subtitle>Perímetro</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-text>
+      El perímetro de un triángulo es la suma de las longitudes de sus tres
+      lados. En otras palabras, es la medida total de contorno o borde del
+      triángulo.
+    </ion-text>
+
+    <!-- display de diagrama triangulo.webp -->
+    <ion-img src="assets/triangulo.webp" alt="Diagrama triángulo"></ion-img>
+  </ion-card-content>
+</ion-card>
+
+<!-- Inputs para los tres lados -->
+<ion-item>
+  <ion-label position="floating">Lado&nbsp;A (cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="ladoA"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Lado&nbsp;B (cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="ladoB"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Lado&nbsp;C (cm)</ion-label>
+  <ion-input type="number" [(ngModel)]="ladoC"></ion-input>
+</ion-item>
+
+<!-- Botón -->
+<ion-button expand="block" (click)="calcular()">
+  Calcular el perímetro
+</ion-button>
+
+<!-- Resultado usando ngIf -->
+<ion-text *ngIf="resultado as p"> El perímetro es {{ p }} cm </ion-text>

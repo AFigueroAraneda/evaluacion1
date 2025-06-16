@@ -40,12 +40,7 @@ import { TrianguloComponent } from '../figuras/triangulo/triangulo.component';
     // Tarjetas y contenido
     IonCard,
     IonCardContent,
-    IonImg,
     IonText,
-
-    // Botón y entrada de texto
-    IonButton,
-    IonInput,
 
     // Componentes lógicos
     CirculoComponent,

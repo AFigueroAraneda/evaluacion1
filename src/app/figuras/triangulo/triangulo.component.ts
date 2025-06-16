@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {
+  IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
+  IonImg, IonText, IonItem, IonLabel, IonInput, IonButton
+} from '@ionic/angular/standalone';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { TrianguloEscaleno } from '../../modelos/TrianguloEscaleno';  // ← ajusta la ruta si cambiaste carpetas
 
 @Component({
+  standalone: true,
   selector: 'app-triangulo',
   templateUrl: './triangulo.component.html',
   styleUrls: ['./triangulo.component.scss'],
-  standalone: true,
+  imports: [
+    CommonModule, FormsModule,
+    IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
+    IonImg, IonText, IonItem, IonLabel, IonInput, IonButton
+  ]
 })
-export class TrianguloComponent  implements OnInit {
+export class TrianguloComponent {
 
-  constructor() { }
+  /* Binding de los tres lados */
+  ladoA = 0;
+  ladoB = 0;
+  ladoC = 0;
 
-  ngOnInit() {}
+  resultado?: number;
 
+  calcular(): void {
+    const figura = new TrianguloEscaleno(this.ladoA, this.ladoB, this.ladoC);
+    this.resultado = figura.calcularPerimetro();
+  }
 }
